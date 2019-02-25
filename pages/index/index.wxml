@@ -1,0 +1,7 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="header">
+    <image class="head_bg" src="https://www.goodb2b.cn/xdxd_file/head_top.jpg" />
+    <text class=""></text>
+  </view>
+</view>
