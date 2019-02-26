@@ -47,14 +47,15 @@
   padding-bottom: 10rpx;
 }
 .g-swiper{
-  height: 100rpx;
   width: 100%;
-  margin-top:36rpx;
 }
 .m-swiper{
   width: 100%;
 }
 .u-swiper-image{
   width: 100%;
-  height: 240px;
+}
+image{
+  height: auto;
+  display: block;
 }

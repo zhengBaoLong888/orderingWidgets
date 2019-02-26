@@ -1,7 +1,7 @@
 <!--index.wxml-->
 <view class="container">
-  <view class="header">
-    <image class="head_bg" src="https://www.goodb2b.cn/xdxd_file/head_top.jpg" />
+  <view class="header" wx:for="{{array}}" wx:for-item="itemImg">
+    <image class="head_bg"  mode="{{itemImg.mode}}" src="{{src}}" />
     <view class="head_content">
       <view class='head_title_box'>
         <i-icon type="coordinates_fill" color="#80848f"/>
@@ -18,15 +18,19 @@
     </view>
   </view>
 
+
+
   <view class='g-swiper'>
     <swiper class='m-swiper'
         indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" circular="{{circular}}" vertical="{{vertical}}"
         interval="{{interval}}" duration="{{duration}}" previous-margin="{{previousMargin}}px" next-margin="{{nextMargin}}px">
         <block wx:for="{{imgUrls}}" wx:key="index">
           <swiper-item>
-            <image class='u-swiper-image' src="{{item}}" mode='scaleToFill' />
+            <image mode="{{itemImg.mode}}" class='u-swiper-image' src="{{item}}" mode='scaleToFill' />
           </swiper-item>
         </block>
       </swiper>
   </view>
 </view>
+
+ 
