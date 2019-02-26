@@ -5,6 +5,7 @@ Page({
   },
   
   data: {
+    name:"123",
     imgUrls: [
       '../../images/discover_1.jpg',
       '../../images/discover_2.jpg',
