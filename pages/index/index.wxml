@@ -4,7 +4,7 @@
     <image class="head_bg"  mode="{{itemImg.mode}}" src="{{src}}" />
     <view class="head_content">
       <view class='head_title_box'>
-        <i-icon type="coordinates_fill" color="#80848f"/>
+        <i-icon type="coordinates_fill" color="#fff" size='18'/>
         <text class="head-title">北京西单购物中心店</text>
         <view class='head-storChang'>
           <text class='head_changeText'>切换店面</text>
