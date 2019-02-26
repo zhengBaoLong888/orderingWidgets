@@ -2,6 +2,31 @@
 <view class="container">
   <view class="header">
     <image class="head_bg" src="https://www.goodb2b.cn/xdxd_file/head_top.jpg" />
-    <text class=""></text>
+    <view class="head_content">
+      <view class='head_title_box'>
+        <i-icon type="coordinates_fill" color="#80848f"/>
+        <text class="head-title">北京西单购物中心店</text>
+        <view class='head-storChang'>
+          <text class='head_changeText'>切换店面</text>
+          <image class='head-titleImg' src='../../images/index_storefront.png'></image>
+        </view>
+      </view>
+      <view class='head_search'>
+        <i-icon type="search" />
+        <text>商品名称</text>
+      </view>
+    </view>
+  </view>
+
+  <view class='g-swiper'>
+    <swiper class='m-swiper'
+        indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" circular="{{circular}}" vertical="{{vertical}}"
+        interval="{{interval}}" duration="{{duration}}" previous-margin="{{previousMargin}}px" next-margin="{{nextMargin}}px">
+        <block wx:for="{{imgUrls}}" wx:key="index">
+          <swiper-item>
+            <image class='u-swiper-image' src="{{item}}" mode='scaleToFill' />
+          </swiper-item>
+        </block>
+      </swiper>
   </view>
 </view>
