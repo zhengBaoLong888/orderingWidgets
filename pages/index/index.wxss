@@ -16,24 +16,28 @@
 }
 .head_title_box{
   padding: 0rpx 20rpx;
+  margin-top: 17rpx;
 }
 .head-title{
   color: #fff;
   font-size: 32rpx;
+  font-weight: bold;
 }
 .head-storChang{
   float: right;
+  position: relative;
 }
 .head-titleImg{
-  width: 50rpx;
-  height: 50rpx;
-  position: relative;
-  bottom: -8rpx;
+  width:65rpx;
+  height:55rpx;
+  position:absolute;
+  right:10rpx;
+  top:5rpx;
 }
 .head_changeText{
   color: #fff;
   font-size: 28rpx;
-  margin-right: 10rpx;
+  margin-right: 80rpx;
 }
 .head_search{
   background-color: #fff;
@@ -54,8 +58,4 @@
 }
 .u-swiper-image{
   width: 100%;
-}
-image{
-  height: auto;
-  display: block;
 }
