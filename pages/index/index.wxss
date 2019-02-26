@@ -52,10 +52,14 @@
 }
 .g-swiper{
   width: 100%;
+  height: 212rpx;
 }
 .m-swiper{
   width: 100%;
 }
 .u-swiper-image{
   width: 100%;
+}
+image,swiper{
+  height: 100%;
 }
