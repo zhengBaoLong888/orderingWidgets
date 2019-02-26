@@ -3,7 +3,8 @@
     "pages/index/index",
     "pages/discove/discove",
     "pages/my/my",
-    "pages/other/other"
+    "pages/other/other",
+    "pages/goodsList/goodsList"
   ],
   "window":{
     "backgroundTextStyle":"light",

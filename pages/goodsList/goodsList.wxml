@@ -1,0 +1,3 @@
+  <view class="container" wx:for="{{ListData}}">
+    <text>{{item.name}}</text>
+  </view>
