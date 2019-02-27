@@ -29,7 +29,7 @@
         </block>
       </swiper>
   </view>
-  <goodsList></goodsList>
+  <goodsList class="width100"></goodsList>
 </view>
 
  

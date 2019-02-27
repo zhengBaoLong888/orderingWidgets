@@ -60,6 +60,9 @@
 .u-swiper-image{
   width: 100%;
 }
+.width100{
+  width: 100%;
+}
 image,swiper{
   height: 100%;
 }
