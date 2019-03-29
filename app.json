@@ -4,7 +4,7 @@
     "pages/discove/discove",
     "pages/my/my",
     "pages/other/other",
-    "pages/goodsList/goodsList"
+    "pages/shopCat/shopCat"
   ],
   "window":{
     "backgroundTextStyle":"light",
@@ -22,16 +22,16 @@
         "selectedIconPath":"images/indexbutlink1.png"
       },
       {
-        "pagePath": "pages/discove/discove",
-        "text": "发现",
-        "iconPath":"images/indexbut2.png",
-        "selectedIconPath":"images/indexbutlink2.png"
-      },
-      {
         "pagePath": "pages/other/other",
         "text": "订单",
         "iconPath":"images/indexbut3.png",
         "selectedIconPath":"images/indexbutlink3.png"
+      },
+      {
+        "pagePath": "pages/shopCat/shopCat",
+        "text": "购物车",
+        "iconPath":"images/shopCat.png",
+        "selectedIconPath":"images/shopCatLink.png"
       },
       {
         "pagePath": "pages/my/my",
@@ -40,5 +40,8 @@
         "selectedIconPath":"images/indexbutlink4.png"
       }
     ]
+  },
+  "networkTimeout":{
+    "request":10000
   }
 }

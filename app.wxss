@@ -7,4 +7,10 @@
   justify-content: space-between;
   padding: 0;
   box-sizing: border-box;
+  font-family: "PingFang SC Bold";
 } 
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}

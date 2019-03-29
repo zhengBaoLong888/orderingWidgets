@@ -1,12 +1,13 @@
 {
 	"setting": {
-		"urlCheck": true,
+		"urlCheck": false,
 		"es6": true,
 		"postcss": true,
 		"minified": true,
-		"newFeature": true
+		"newFeature": true,
+		"autoAudits": false
 	},
-	"appid": "wxd58c38f26ad2a48b",
+	"appid": "wx74661506392c40b5",
 	"projectname": "xcx",
 	"libVersion": "2.2.5",
 	"condition": {

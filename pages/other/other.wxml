@@ -1,3 +1,24 @@
 <view class="container log-list">
-订单
+  <view class="list" wx:if="{{otherList.length != 0}}" wx:key="" wx:for="{{otherList}}">
+    <view class="top" wx:for="{{item.details}}" wx:for-item="j">
+      <image class="img" src="{{j.imgs[0].path}}" />
+      <view class="center">
+        <text class="name">{{j.proName}}</text>
+        <view class="hx">
+          <text class="material" wx:if="{{j.mats.length != 0}}">{{j.mats[0].matName}}  </text>
+          <text class="task" wx:if="{{j.tastes.length != 0}}" wx:for="{{j.tastes}}" wx:for-item="n">{{n.tasteName}}  </text>
+        </view>
+      </view>
+      <text class="price">￥{{j.price}}</text>
+      <text class="num">x{{j.proCount}}</text>
+    </view>
+    <view class="dist">
+      <view class="orderDetails">下单时间:{{item.createTime}}</view>
+      <view class="orderDetails">订单编号:{{item.ordeNo}}</view>
+      <view class="bottom">
+        <text class="bottomText" wx:if="{{item.status == 2}}">状态:未支付</text>
+        <text class="bottomText">合计:{{item.totalPrice}}</text>
+      </view>
+    </view>
+  </view>
 </view>

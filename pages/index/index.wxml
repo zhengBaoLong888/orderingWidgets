@@ -1,10 +1,20 @@
-<!--index.wxml-->
-<view class="container">
-  <view class="header" wx:for="{{array}}" wx:for-item="itemImg">
-    <image class="head_bg"  mode="{{itemImg.mode}}" src="{{src}}" />
+<!-- index.wxml -->
+<view class="container getHeight">
+  <view class="header getHeight">
+    <view class="head-navigation">
+      <image class="imgNav" src="{{navigationIcon}}" />
+      <text class="head-title">北京西单购物中心店</text>
+    </view>
+    <view class='head-storChang'>
+      <text class='head_changeText'>切换店面</text>
+      <image class='head-titleImg' src='../../images/index_storefront.png'></image>
+    </view>
+  </view>
+  <!-- <view class="header">
+    <image class="head_bg" mode="{{mode}}" src="{{src}}" />
     <view class="head_content">
       <view class='head_title_box'>
-        <i-icon type="coordinates_fill" color="#fff" size='18'/>
+        <i-icon type="coordinates_fill" color="#fff" size='18' />
         <text class="head-title">北京西单购物中心店</text>
         <view class='head-storChang'>
           <text class='head_changeText'>切换店面</text>
@@ -16,20 +26,74 @@
         <text>商品名称</text>
       </view>
     </view>
+  </view> -->
+  <view class='g-swiper getHeight'>
+    <swiper class='m-swiper' indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" circular="{{circular}}" vertical="{{vertical}}" interval="{{interval}}" duration="{{duration}}" previous-margin="{{previousMargin}}px" next-margin="{{nextMargin}}px">
+      <block wx:for="{{swichet}}" wx:key="index">
+        <swiper-item>
+          <image mode="{{mode}}" class='u-swiper-image' src="{{item.path}}" mode='scaleToFill' />
+        </swiper-item>
+      </block>
+    </swiper>
   </view>
-
-  <view class='g-swiper'>
-    <swiper class='m-swiper'
-        indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" circular="{{circular}}" vertical="{{vertical}}"
-        interval="{{interval}}" duration="{{duration}}" previous-margin="{{previousMargin}}px" next-margin="{{nextMargin}}px">
-        <block wx:for="{{imgUrls}}" wx:key="index">
-          <swiper-item>
-            <image mode="{{itemImg.mode}}" class='u-swiper-image' src="{{item}}" mode='scaleToFill' />
-          </swiper-item>
-        </block>
-      </swiper>
+  <view class="productList" style="height:{{setHeight}};">
+    <view class="left-i">
+      <text wx:for-index="idx" data-num="{{idx}}" wx:key="" class="left-text {{typeNum==idx?'typeBg':''}}"  wx:for="{{productCategories}}" data-id="{{item.id}}" bindtap="getptrList">{{item.typeName}}</text>
+    </view>
+    <scroll-view class="right-i" scroll-y style="height:{{setHeight}};">
+    <!-- <view class="z">感受经典</view> -->
+      <view class="rightMain" wx:key="*this" wx:for="{{product}}" bindtap="marks" data-proType="{{item.proType}}" data-proId="{{item.proId}}" data-bg="{{item.bg}}" data-name="{{item.proName}}" data-origionPrice="{{item.origionPrice}}" data-img="{{item.imgs[0].path}}">
+        <image class="imgUrl" src="{{item.imgs[0].path}}" />
+        <view class="rightCenter">
+          <text class="t-name">{{item.proName}}</text>
+          <text class="dis">{{item.bg}}</text>
+          <text class="price">￥{{item.origionPrice}}</text>
+        </view>
+        <image class="addImg" src="../../images/dishesDetail_82.png" />
+      </view>
+    </scroll-view>
+    <view class="mask" hidden="{{reply}}">
+      <view class="mask_main">
+        <view class="maskMain-head">
+          <image class="maskImg" mode="{{mode}}" src="{{imgPath}}" />
+          <view class="maskMain-ms">
+            <text class="maskHeadText">{{name}}</text>
+            <text class="maskHeadText active">价格：{{price}}元</text>
+            <text class="maskHeadText commenStyle">{{ms}}</text>
+          </view>
+        </view>
+        <view class="maskMain-center">
+          <view class="specification">
+            <text class="title">规格</text>
+            <text class="fontCss pitch" data-scaleId="{{scalesId}}">{{scales}}</text>
+          </view>
+          <view class="specification" wx:if="{{matsLength != 0}}">
+            <text class="title">加料</text>
+            <view class="icant">
+              <text id="default" class="fontCss {{styleClass}}" bindtap="default">默认原料</text>
+              <text wx:for="{{martArr}}" wx:for-index="idx" data-num="{{idx}}" data-proMatId="{{item.proMatId}}" data-matName="{{item.matName}}" class="fontCss {{_num==idx?'pitch':''}}" bindtap="tabSelect">{{item.matName}}+{{item.ingredientPrice}}元</text>
+            </view>
+          </view>
+          <view class="specification" wx:for-index="idex" wx:key="*this" wx:for="{{tastes}}" wx:if="{{tastesLength != 0}} ">
+            <view wx:if="{{idex == 0}}">
+              <text class="title">{{item.groupName}}</text>
+              <view class="icant">
+                <text wx:for-index="idx" data-tasteId="{{jtem.tasteId}}" data-tasteName="{{jtem.tasteName}}" data-num="{{idx}}" class="fontCss {{_num2==idx?'pitch':''}}" wx:for="{{item.tasteList}}" wx:key="*this" wx:for-item="jtem" bindtap="tabSelectTask">{{jtem.tasteName}}</text>
+              </view>
+            </view>
+            <view wx:if="{{idex == 1}}">
+              <text class="title">{{item.groupName}}</text>
+              <view class="icant">
+                <text wx:for-index="idx" data-tasteId="{{jtem.tasteId}}" data-tasteName="{{jtem.tasteName}}" data-num="{{idx}}" class="fontCss {{_num3==idx?'pitch':''}}" wx:for="{{item.tasteList}}" wx:key="*this" wx:for-item="jtem" bindtap="tabSelectTask2">{{jtem.tasteName}}</text>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view class="control">
+          <text class="controlBottom cancel" bindtap="cancel">取消</text>
+          <text class="controlBottom join" bindtap="addShopCat">加入购物车</text>
+        </view>
+      </view>
+    </view>
   </view>
-  <goodsList class="width100"></goodsList>
 </view>
-
- 
